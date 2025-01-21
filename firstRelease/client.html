@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Meu primeiro jogo Multiplayer</title>
+
+    <style>
+      #screen {
+        border: 10px solid black;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        image-rendering: -moz-crisp-edges;
+        height: 400px;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="screen" width="10" height="10"> </canvas>
+    <script type="module">
+      import createKeyboardListener from "./gameCommand.js";
+      import createGame from "./createGame.js";
+      import renderScreen from "./renderGame.js";
+      const screen = document.getElementById("screen");
+      const context = screen.getContext("2d");
+
+
+      const game = createGame();
+      renderScreen(screen, game, requestAnimationFrame);
+      game.addPlayer({ playerId: "player1", playerX: 0, playerY: 0 });
+      game.addPlayer({ playerId: "player2", playerX: 3, playerY: 0 });
+      game.addFruit({ fruitId: "fruit1", fruitX: 8, fruitY: 8 });
+      const keyboardListener = createKeyboardListener(document);
+      keyboardListener.subscribe(game.movePlayer);
+
+    
+
+    </script>
+  </body>
+</html>
