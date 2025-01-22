@@ -1,0 +1,7 @@
+0 - Code Smell, aplicar melhor organização no código.
+1 - Reajustar Canvas, com valores vindos do servidor
+2 - Desinscrever observers ao desconectar 
+3 - sistema de pontuação
+4 - Emitir som a cada ponto marcado
+5 - Teleportar o quadrado para o outro lado do quadrado
+6 - extrair funções anonimas 
